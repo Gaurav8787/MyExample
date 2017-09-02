@@ -18,12 +18,21 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    [self loadDB];
+    
+    return YES;
+}
+
+-(void)loadDB {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0]; // Get documents folder
     NSString *writablePath = [documentsDirectory stringByAppendingPathComponent:@"/MyDate.db"];
     
     NSString *defaultDBPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"/MyDate.db"];
     
+    if ([[NSFileManager defaultManager] fileExistsAtPath:writablePath])
+        return;
+
     NSError *error;
     BOOL success = [[NSFileManager defaultManager] copyItemAtPath:defaultDBPath toPath:writablePath error:&error];
     
@@ -35,8 +44,6 @@
         
     }
 
-    
-    return YES;
 }
 
 

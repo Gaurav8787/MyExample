@@ -69,9 +69,13 @@
             NSLog(@"Error: %@", error);
         } else {
             NSLog(@"%@", responseObject);
+            NSDictionary *responseDic = responseObject;
             
-            NSString *path = [NSTemporaryDirectory() stringByAppendingPathComponent:@"MyDate.db"];
-            FMDatabase *db = [FMDatabase databaseWithPath:path];
+            NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+            NSString *documentsDirectory = [paths objectAtIndex:0]; // Get documents folder
+            NSString *dbPath = [documentsDirectory stringByAppendingPathComponent:@"/MyDate.db"];
+
+            FMDatabase *db = [FMDatabase databaseWithPath:dbPath];
             
             if (![db open]) {
                 // [db release];   // uncomment this line in manual referencing code; in ARC, this is not necessary/permitted
@@ -79,25 +83,47 @@
                 return;
             }
             
+            NSString *insertQuery = [NSString stringWithFormat:@"INSERT INTO MyDate(mydateinfo, mymilsecondinfo, mytimeinfo) VALUES (\"%@\",\"%@\",\"%@\");",[responseDic objectForKey:@"date"],
+                                     [responseDic objectForKey:@"milliseconds_since_epoch"],
+                                     [responseDic objectForKey:@"time"]];
             
+            BOOL getIt= [db executeUpdate:insertQuery];
+                         
+                         
+            [db close];
+            if(getIt)
+            {
+                NSLog(@"inserted");
+            }
             
-            
-            
-            
-//            NSArray *arrayCategories = (NSArray*)responseObject;
-//            NSDictionary *dic = [arrayCategories objectAtIndex:0];
-//            NSLog(@"%@",dic);
-//            
-//            NSDictionary *tempDic = [dic objectForKey:@"Temperature"];
-//            NSLog(@"%@",tempDic);
-//            
-//            NSDictionary *metic = [tempDic objectForKey:@"Metric"];
-//            NSLog(@"value =%@",[metic objectForKey:@"Value"]);
-            
+            [self getDataFromDB];
         }
     }];
     [dataTask resume];
 
+    
+}
+
+-(void)getDataFromDB {
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0]; // Get documents folder
+    NSString *dbPath = [documentsDirectory stringByAppendingPathComponent:@"/MyDate.db"];
+    
+    FMDatabase* db = [FMDatabase databaseWithPath:dbPath];
+    
+    if(![db open])
+        NSLog(@"database can not be open...");
+    
+    FMResultSet *rs = [db executeQuery:@"SELECT * FROM MyDate"];
+   
+    while ([rs next]) {
+        NSLog(@"date=%@",[rs stringForColumn:@"mydateinfo"]);
+        NSLog(@"milli=%@",[rs stringForColumn:@"mymilsecondinfo"]);
+        NSLog(@"time=%@",[rs stringForColumn:@"mytimeinfo"]);
+    }
+    
+    [db close];
     
 }
 

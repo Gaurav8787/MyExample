@@ -57,13 +57,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "test/ViewController.m"
-            timestampString = "526045379.115947"
+            filePath = "test/AppDelegate.m"
+            timestampString = "526048883.682667"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
-            landmarkName = "-callPostMethod"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "-loadDB"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
