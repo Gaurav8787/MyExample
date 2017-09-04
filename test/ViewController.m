@@ -9,12 +9,18 @@
 #import "ViewController.h"
 #import "AFNetworking.h"
 #import "FMDatabase.h"
+#import "MyTableViewCell.h"
+#import <AVFoundation/AVFoundation.h>
+#import <AVKit/AVKit.h>
 
-@interface ViewController ()
+@interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
+
+@property(nonatomic,weak) IBOutlet UITableView *tblView;
 
 @end
 
 @implementation ViewController
+@synthesize tblView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -124,6 +130,62 @@
     }
     
     [db close];
+    
+}
+
+- (NSInteger)numberOfRowsInSection:(NSInteger)section {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 20;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 50;
+}
+
+// Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
+// Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    MyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MyTableViewCell"];
+    
+    if (cell==nil) {
+        NSArray *nibs = [[NSBundle mainBundle] loadNibNamed:@"MyTableViewCell" owner:self options:nil];
+        cell = [nibs objectAtIndex:0];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    }
+    
+    cell.lblLabel.text=[NSString stringWithFormat:@"test %ld",(long)indexPath.row];
+    cell.lblDesc.text=[NSString stringWithFormat:@"desc %ld",(long)indexPath.row];
+    //
+    //cancel loading previous image for cell
+    [[AsyncImageLoader sharedLoader] cancelLoadingImagesForTarget:cell.imgView];
+
+    [cell.imgView setImageURL:[NSURL URLWithString:@"http://charcoaldesign.co.uk/AsyncImageView/Forest/IMG_0351.JPG"]];
+    
+ /*   static NSString *reuseIdentifier = @"cellIdentifier";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
+    
+    if (cell==nil) {
+        cell=[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
+    }
+    
+    cell.textLabel.text=[NSString stringWithFormat:@"test %d",indexPath.row];*/
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    AVPlayerViewController * _moviePlayer1 = [[AVPlayerViewController alloc] init];
+    _moviePlayer1.player = [AVPlayer playerWithURL:[NSURL URLWithString:@"https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"]];
+    
+    [self presentViewController:_moviePlayer1 animated:YES completion:^{
+        [_moviePlayer1.player play];
+    }];
     
 }
 

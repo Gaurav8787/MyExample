@@ -38,6 +38,11 @@
 		F43A5E441F5AD02F00AA6DB1 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = F43A5E3E1F5AD02F00AA6DB1 /* FMResultSet.m */; };
 		F43A5E451F5AD02F00AA6DB1 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F43A5E3F1F5AD02F00AA6DB1 /* Info.plist */; };
 		F43A5E481F5AD17B00AA6DB1 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F43A5E471F5AD17B00AA6DB1 /* libsqlite3.tbd */; };
+		F47D2BEA1F5D5FAB00A92BA0 /* MyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F47D2BE81F5D5FAB00A92BA0 /* MyTableViewCell.m */; };
+		F47D2BEB1F5D5FAB00A92BA0 /* MyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F47D2BE91F5D5FAB00A92BA0 /* MyTableViewCell.xib */; };
+		F47D2BEF1F5D777200A92BA0 /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = F47D2BEE1F5D777200A92BA0 /* AsyncImageView.m */; };
+		F47D2BF61F5D8A9F00A92BA0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F47D2BF51F5D8A9F00A92BA0 /* AVFoundation.framework */; };
+		F47D2BF81F5D8AE500A92BA0 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F47D2BF71F5D8AE500A92BA0 /* AVKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +126,13 @@
 		F43A5E3E1F5AD02F00AA6DB1 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		F43A5E3F1F5AD02F00AA6DB1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F43A5E471F5AD17B00AA6DB1 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		F47D2BE71F5D5FAB00A92BA0 /* MyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewCell.h; sourceTree = "<group>"; };
+		F47D2BE81F5D5FAB00A92BA0 /* MyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewCell.m; sourceTree = "<group>"; };
+		F47D2BE91F5D5FAB00A92BA0 /* MyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyTableViewCell.xib; sourceTree = "<group>"; };
+		F47D2BED1F5D777200A92BA0 /* AsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageView.h; sourceTree = "<group>"; };
+		F47D2BEE1F5D777200A92BA0 /* AsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
+		F47D2BF51F5D8A9F00A92BA0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		F47D2BF71F5D8AE500A92BA0 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +140,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F47D2BF81F5D8AE500A92BA0 /* AVKit.framework in Frameworks */,
+				F47D2BF61F5D8A9F00A92BA0 /* AVFoundation.framework in Frameworks */,
 				F43A5E481F5AD17B00AA6DB1 /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -183,6 +197,9 @@
 				F43A5DD91F5AB41800AA6DB1 /* LaunchScreen.storyboard */,
 				F43A5DDC1F5AB41800AA6DB1 /* Info.plist */,
 				F43A5DCB1F5AB41800AA6DB1 /* Supporting Files */,
+				F47D2BE71F5D5FAB00A92BA0 /* MyTableViewCell.h */,
+				F47D2BE81F5D5FAB00A92BA0 /* MyTableViewCell.m */,
+				F47D2BE91F5D5FAB00A92BA0 /* MyTableViewCell.xib */,
 			);
 			path = test;
 			sourceTree = "<group>";
@@ -217,6 +234,7 @@
 		F43A5DFE1F5AB43800AA6DB1 /* thirdparty */ = {
 			isa = PBXGroup;
 			children = (
+				F47D2BEC1F5D777200A92BA0 /* AsyncImageView */,
 				F43A5E331F5AD02F00AA6DB1 /* fmdb */,
 				F43A5DFF1F5AB43800AA6DB1 /* AFNetworking */,
 				F43A5E0D1F5AB43800AA6DB1 /* UIKit+AFNetworking */,
@@ -293,9 +311,20 @@
 		F43A5E461F5AD17B00AA6DB1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F47D2BF71F5D8AE500A92BA0 /* AVKit.framework */,
+				F47D2BF51F5D8A9F00A92BA0 /* AVFoundation.framework */,
 				F43A5E471F5AD17B00AA6DB1 /* libsqlite3.tbd */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F47D2BEC1F5D777200A92BA0 /* AsyncImageView */ = {
+			isa = PBXGroup;
+			children = (
+				F47D2BED1F5D777200A92BA0 /* AsyncImageView.h */,
+				F47D2BEE1F5D777200A92BA0 /* AsyncImageView.m */,
+			);
+			path = AsyncImageView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -408,6 +437,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F43A5DDB1F5AB41800AA6DB1 /* LaunchScreen.storyboard in Resources */,
+				F47D2BEB1F5D5FAB00A92BA0 /* MyTableViewCell.xib in Resources */,
 				F43A5E321F5ACFE000AA6DB1 /* MyDate.db in Resources */,
 				F43A5DD81F5AB41800AA6DB1 /* Assets.xcassets in Resources */,
 				F43A5E451F5AD02F00AA6DB1 /* Info.plist in Resources */,
@@ -447,6 +477,7 @@
 				F43A5DD01F5AB41800AA6DB1 /* AppDelegate.m in Sources */,
 				F43A5E231F5AB43800AA6DB1 /* AFNetworkReachabilityManager.m in Sources */,
 				F43A5E2F1F5AB43800AA6DB1 /* UIRefreshControl+AFNetworking.m in Sources */,
+				F47D2BEF1F5D777200A92BA0 /* AsyncImageView.m in Sources */,
 				F43A5DCD1F5AB41800AA6DB1 /* main.m in Sources */,
 				F43A5E281F5AB43800AA6DB1 /* AFAutoPurgingImageCache.m in Sources */,
 				F43A5E241F5AB43800AA6DB1 /* AFSecurityPolicy.m in Sources */,
@@ -457,6 +488,7 @@
 				F43A5E221F5AB43800AA6DB1 /* AFHTTPSessionManager.m in Sources */,
 				F43A5E291F5AB43800AA6DB1 /* AFImageDownloader.m in Sources */,
 				F43A5E431F5AD02F00AA6DB1 /* FMDatabaseQueue.m in Sources */,
+				F47D2BEA1F5D5FAB00A92BA0 /* MyTableViewCell.m in Sources */,
 				F43A5E2B1F5AB43800AA6DB1 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				F43A5E411F5AD02F00AA6DB1 /* FMDatabaseAdditions.m in Sources */,
 			);
