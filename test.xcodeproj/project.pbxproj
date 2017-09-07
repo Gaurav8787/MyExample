@@ -38,6 +38,8 @@
 		F43A5E441F5AD02F00AA6DB1 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = F43A5E3E1F5AD02F00AA6DB1 /* FMResultSet.m */; };
 		F43A5E451F5AD02F00AA6DB1 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F43A5E3F1F5AD02F00AA6DB1 /* Info.plist */; };
 		F43A5E481F5AD17B00AA6DB1 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F43A5E471F5AD17B00AA6DB1 /* libsqlite3.tbd */; };
+		F45A2CF71F6019C3007B6FB5 /* YTPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F45A2CF61F6019C3007B6FB5 /* YTPlayerView.m */; };
+		F45A2CFC1F602246007B6FB5 /* Assets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F45A2CFB1F602246007B6FB5 /* Assets.bundle */; };
 		F47D2BEA1F5D5FAB00A92BA0 /* MyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F47D2BE81F5D5FAB00A92BA0 /* MyTableViewCell.m */; };
 		F47D2BEB1F5D5FAB00A92BA0 /* MyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F47D2BE91F5D5FAB00A92BA0 /* MyTableViewCell.xib */; };
 		F47D2BEF1F5D777200A92BA0 /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = F47D2BEE1F5D777200A92BA0 /* AsyncImageView.m */; };
@@ -126,6 +128,9 @@
 		F43A5E3E1F5AD02F00AA6DB1 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		F43A5E3F1F5AD02F00AA6DB1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F43A5E471F5AD17B00AA6DB1 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		F45A2CF51F6019C3007B6FB5 /* YTPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTPlayerView.h; sourceTree = "<group>"; };
+		F45A2CF61F6019C3007B6FB5 /* YTPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTPlayerView.m; sourceTree = "<group>"; };
+		F45A2CFB1F602246007B6FB5 /* Assets.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Assets.bundle; sourceTree = "<group>"; };
 		F47D2BE71F5D5FAB00A92BA0 /* MyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewCell.h; sourceTree = "<group>"; };
 		F47D2BE81F5D5FAB00A92BA0 /* MyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewCell.m; sourceTree = "<group>"; };
 		F47D2BE91F5D5FAB00A92BA0 /* MyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyTableViewCell.xib; sourceTree = "<group>"; };
@@ -234,6 +239,10 @@
 		F43A5DFE1F5AB43800AA6DB1 /* thirdparty */ = {
 			isa = PBXGroup;
 			children = (
+				F45A2CFB1F602246007B6FB5 /* Assets.bundle */,
+				F45A2CF81F601D7E007B6FB5 /* Assets */,
+				F45A2CF51F6019C3007B6FB5 /* YTPlayerView.h */,
+				F45A2CF61F6019C3007B6FB5 /* YTPlayerView.m */,
 				F47D2BEC1F5D777200A92BA0 /* AsyncImageView */,
 				F43A5E331F5AD02F00AA6DB1 /* fmdb */,
 				F43A5DFF1F5AB43800AA6DB1 /* AFNetworking */,
@@ -316,6 +325,14 @@
 				F43A5E471F5AD17B00AA6DB1 /* libsqlite3.tbd */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F45A2CF81F601D7E007B6FB5 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Assets;
+			path = ../../Assets;
 			sourceTree = "<group>";
 		};
 		F47D2BEC1F5D777200A92BA0 /* AsyncImageView */ = {
@@ -439,6 +456,7 @@
 				F43A5DDB1F5AB41800AA6DB1 /* LaunchScreen.storyboard in Resources */,
 				F47D2BEB1F5D5FAB00A92BA0 /* MyTableViewCell.xib in Resources */,
 				F43A5E321F5ACFE000AA6DB1 /* MyDate.db in Resources */,
+				F45A2CFC1F602246007B6FB5 /* Assets.bundle in Resources */,
 				F43A5DD81F5AB41800AA6DB1 /* Assets.xcassets in Resources */,
 				F43A5E451F5AD02F00AA6DB1 /* Info.plist in Resources */,
 				F43A5DD61F5AB41800AA6DB1 /* Main.storyboard in Resources */,
@@ -484,6 +502,7 @@
 				F43A5E251F5AB43800AA6DB1 /* AFURLRequestSerialization.m in Sources */,
 				F43A5E2A1F5AB43800AA6DB1 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				F43A5E261F5AB43800AA6DB1 /* AFURLResponseSerialization.m in Sources */,
+				F45A2CF71F6019C3007B6FB5 /* YTPlayerView.m in Sources */,
 				F43A5E441F5AD02F00AA6DB1 /* FMResultSet.m in Sources */,
 				F43A5E221F5AB43800AA6DB1 /* AFHTTPSessionManager.m in Sources */,
 				F43A5E291F5AB43800AA6DB1 /* AFImageDownloader.m in Sources */,

@@ -24,6 +24,55 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iKu-eQ-F9P">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="MyTableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyTableViewCell" rowHeight="50" id="dxQ-Hs-WyA" customClass="MyTableViewCell">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dxQ-Hs-WyA" id="5xG-cx-kGt">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wsJ-tX-zkg">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GzC-if-CI6" customClass="AsyncImageView">
+                                                            <rect key="frame" x="10" y="10" width="30" height="29.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="30" id="l7X-Ka-wbO"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMF-2K-IeG">
+                                                            <rect key="frame" x="50" y="10" width="315" height="29.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="aMF-2K-IeG" firstAttribute="top" secondItem="wsJ-tX-zkg" secondAttribute="top" constant="10" id="A7M-d4-rMg"/>
+                                                        <constraint firstItem="GzC-if-CI6" firstAttribute="top" secondItem="wsJ-tX-zkg" secondAttribute="top" constant="10" id="YoY-x8-i1v"/>
+                                                        <constraint firstItem="aMF-2K-IeG" firstAttribute="leading" secondItem="GzC-if-CI6" secondAttribute="trailing" constant="10" id="bgE-BV-zHs"/>
+                                                        <constraint firstAttribute="bottom" secondItem="GzC-if-CI6" secondAttribute="bottom" constant="10" id="ewY-F8-Vta"/>
+                                                        <constraint firstAttribute="bottom" secondItem="aMF-2K-IeG" secondAttribute="bottom" constant="10" id="qrl-Fa-maq"/>
+                                                        <constraint firstItem="GzC-if-CI6" firstAttribute="leading" secondItem="wsJ-tX-zkg" secondAttribute="leading" constant="10" id="sOg-tb-TdF"/>
+                                                        <constraint firstAttribute="trailing" secondItem="aMF-2K-IeG" secondAttribute="trailing" constant="10" id="vvq-hG-w4f"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="wsJ-tX-zkg" secondAttribute="bottom" id="0fw-Tq-xAc"/>
+                                                <constraint firstItem="wsJ-tX-zkg" firstAttribute="top" secondItem="5xG-cx-kGt" secondAttribute="top" id="EpI-a3-mu5"/>
+                                                <constraint firstAttribute="trailing" secondItem="wsJ-tX-zkg" secondAttribute="trailing" id="q5e-Zh-Ahi"/>
+                                                <constraint firstItem="wsJ-tX-zkg" firstAttribute="leading" secondItem="5xG-cx-kGt" secondAttribute="leading" id="yaV-6P-Bkl"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imgView" destination="GzC-if-CI6" id="Fec-Zp-Dhq"/>
+                                            <outlet property="lblLabel" destination="aMF-2K-IeG" id="V3R-Zv-IN0"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <sections/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="lEq-tJ-GK9"/>
@@ -45,6 +94,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="37.331334332833585"/>
         </scene>
     </scenes>
 </document>

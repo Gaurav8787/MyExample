@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YTPlayerView.h"
 
 @interface ViewController : UIViewController
-
 
 @end
 
